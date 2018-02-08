@@ -1,0 +1,1 @@
+{"version":3,"sources":["test.js"],"names":["console","log","Math","pow"],"mappings":"oFAEe,WAEXA,QAAQC,IAAI,WACZD,QAAQC,IAARC,KAAAC,IAAY,EAAK,KALrBH,QAAQC,IAAI","file":"test.babel.js","sourcesContent":["console.log(\"test1__1\");\r\n\r\nexport default function () {\r\n\r\n    console.log(\"test1_2\");\r\n    console.log(1 ** 2);\r\n}"]}
