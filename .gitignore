@@ -1,5 +1,8 @@
 #Node js oriented gitignore
 
+# Jspm
+jspm-bundles
+
 # Logs
 logs
 *.log

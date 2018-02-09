@@ -1,4 +1,7 @@
 
+Workflow with JS scripts:
+All vendor scripts are plugged via vendor.js file wich further will be bundled in one file.
+Each specific page has its own scrips that loads with page. Using SystemJs all requred dependecies are loaded for the page.
 
 System.js config:
 	- download system.js library
@@ -20,4 +23,4 @@ Import npm modules:
 
 Polyfill (Babel) to emulate a full ES2015+ environment:
 	- npm install --save babel-polyfill
-	- inlude it as root dependency
+	- inlude it as root dependency (require("babel-polyfill"))

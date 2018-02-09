@@ -48,7 +48,7 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.babel.js" asp-append-version="true"></script>
+        @*<script src="~/js/site.babel.js" asp-append-version="true"></script>*@
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
@@ -68,23 +68,25 @@
 
     @RenderSection("Scripts", required: false)
 
-    <script src="~/system.js-0.20.0/system.js"></script>
+    @*<script src="~/system.js-0.20.0/system.js"></script>*@
+    <script src="~/jspm_packages/system.js"></script>
+    <script src="~/jspm.config.js"></script>
     <script>
-        SystemJS.config({
-            // baseURL: '/js',
-            //map: {
-            //    'plugin-babel': '/system.js-0.20.0/plugin-babel/plugin-babel.js',
-            //    'systemjs-babel-build': '/system.js-0.20.0/plugin-babel/systemjs-babel-browser.js'
-            //},
-            //transpiler: 'plugin-babel'
-        });
+        //SystemJS.config({
+        //    // baseURL: '/js',
+        //    //map: {
+        //    //    'plugin-babel': '/system.js-0.20.0/plugin-babel/plugin-babel.js',
+        //    //    'systemjs-babel-build': '/system.js-0.20.0/plugin-babel/systemjs-babel-browser.js'
+        //    //},
+        //    //transpiler: 'plugin-babel'
+        //});
 
         // loads relative to the current page URL
         //SystemJS.import('test2.js');
-        SystemJS.import('/js/pages/home/index.babel.js');
+        SystemJS.import('/scripts/pages/home/index.js');
 
-        // load from an absolute URL directly
-        SystemJS.import('https://code.jquery.com/jquery.js');
+            // load from an absolute URL directly
+            //SystemJS.import('https://code.jquery.com/jquery.js');
     </script>
 </body>
 </html>

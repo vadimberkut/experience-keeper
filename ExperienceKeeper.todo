@@ -1,27 +1,10 @@
 Milestone1:
   ✔ Create project structure - 1h @done (18-01-24 07:48)
-  ☐ Preparations - 2h
-    ✔ CSS preprocessor @done (18-01-24 07:36)
-    ✔ CSS minify @done (18-01-24 07:36)
-    ✔ JS ES6 @done (18-01-24 08:35)
-    ✔ JS modules @done (18-02-08 09:44)
-    ☐ JS polyfill (babel polyfill)
-    ☐ Resolve issue with npm module import
-    ✔ JS minify @done (18-02-08 09:43)
-
-    ☐ Bind to VS
-    ☐ Gulp tasks to find unused packages
-  ☐ Setup Asana time tracking
 Milestone2:
-
   ☐ Anonymous Home page
   ☐ User regitration
 Milestone3:
   ☐ Images support - use cloud image service or write own
-
-
-
-
 
  ERRROS SOLUTIONS:
    - Gulp error in VS for autoprefixer, but in console all is ok

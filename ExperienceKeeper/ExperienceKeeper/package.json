@@ -32,6 +32,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
+    "jspm": "^0.16.53",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
@@ -41,5 +42,20 @@
     "jquery": "^3.3.1",
     "lodash": "^4.17.4",
     "moment": "^2.20.1"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "wwwroot"
+    },
+    "configFile": "wwwroot/jspm.config.js",
+    "dependencies": {
+      "lodash": "npm:lodash@^4.17.5",
+      "moment": "npm:moment@^2.20.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
   }
 }
