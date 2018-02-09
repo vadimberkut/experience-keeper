@@ -2,7 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const exec = require('child_process').exec;
 const jspmConfig = require('./package.json').jspm;
+const processJspmBundleEntry = require('./Gulp/utils/jspmBundle.js').processJspmBundleEntry;
+
 const dirname = __dirname;
+const projectRoot = __dirname;
 
 // !NOTICE - use 'folder' instead of './folder' when specifying path
 
@@ -17,6 +20,14 @@ var config = {
             '!wwwroot/scripts/**/vendor.js'
         ],
         destFolder: 'wwwroot/scripts'
+    },
+    'jspm-bundle': {
+        entries: [
+            'wwwroot/scripts/pages/**/index.js'
+        ],
+        jspmConfig: jspmConfig,
+        fileEvent: "changed", // use it to update bundles
+        projectRoot: projectRoot
     },
     //browserify: {
     //    debug: true,
@@ -67,6 +78,8 @@ var config = {
 
 var gulp = require('./Gulp')([
     'babel',
+    'jspm-bundle',
+    'jspm-unbundle',
     //'browserify',
     //'watchify',
     //'server',
@@ -147,79 +160,12 @@ gulp.task('v', () => {
     });
     chokidarFsWatcher.on('change', (data) => {
         // TODO: COnsider use Bundle API - https://github.com/jspm/jspm-cli/blob/master/docs/api.md#bundle-api
-        // console.log('on change', data);
-
-        let pageIndexPath = data.path; // path to chaged file (relative to jspm baseURL)
-        // get part of path that corresponds to jspm root folder subfolder
-        let jspmBaseURLAbsPath = path.join(dirname, jspmConfig.directories.baseURL);
-        if (pageIndexPath.indexOf(jspmBaseURLAbsPath) !== 0) {
-            console.error(`Error occured while computing source file path: ${pageIndexPath} ${jspmBaseURLAbsPath}`);
-            return;
-        }
-        let takePreceedingSlash = 1;
-        pageIndexPath = pageIndexPath.slice(jspmBaseURLAbsPath.length + takePreceedingSlash);
-
-        // delete bundle
-        if (data.type === "deleted") {
-            let bundlePath = getJspmBundlePath(pageIndexPath, jspmConfig.directories.baseURL);
-            let fullBundlePath = path.join(dirname, bundlePath);
-            deleteFileIfExists(fullBundlePath, (err) => {
-                if (err) {
-                    console.error(`Unable to delete bundle: ${err}`);
-                }
-                console.log(`Bunle successfully deleted: ${fullBundlePath}`);
-                deleteFileIfExists(`${fullBundlePath}.map`);
-            });
-            return;
-        }
-
-        // add or update bundle
-        if (data.type === "added" || data.type === "changed") {
-
-            const vendors = ['scripts/vendor.js']; // exclude vendors that will be bundled in separate bundle
-
-            // modules that will be exluded from bundle
-            let arithmetic = vendors.reduce((accum, curr) => { return `${accum} - ${curr}` }, '');
-            let bundlePath = getJspmBundlePath(pageIndexPath, jspmConfig.directories.baseURL);
-
-            let inject = true;
-            let minify = true;
-            let mangle = false; // trim names or not
-            let flags = `${inject ? '--inject' : ''} ${minify ? '--minify' : ''} ${mangle ? '--mangle' : ''}`;
-
-            let jspmCommand = `jspm bundle ${pageIndexPath} ${arithmetic} ${bundlePath} ${flags}`;
-            console.log(jspmCommand);
-
-            exec(jspmCommand, (err, stdout, stderr) => {
-                console.log(stdout);
-                console.error(stderr);
-            });
-        }
-    });
-});
-
-function getJspmBundlePath(pageIndexPath, jspmBaseUrl) {
-    let preserveDestFolderStructure = false; // if false saves all files directly in dest folder. Otherwise uses file's original folder structure
-    let relativePageIndexPath = pageIndexPath; // path relative to project root
-    relativePageIndexPath = relativePageIndexPath.split('.')[0]; // remove extension
-    if (preserveDestFolderStructure === false) {
-        relativePageIndexPath = relativePageIndexPath.split(path.sep).filter((x) => !!x).join('-');
-    }
-    let bundlePath = path.join(jspmBaseUrl, `jspm-bundles`, `${relativePageIndexPath}.bundle.js`);
-    return bundlePath;
-}
-
-function deleteFileIfExists(path, cb) {
-    if (!cb || typeof cb !== "function") {
-        cb = () => { };
-    }
-    fs.stat(path, (err, stats) => {
-        if (err) {
-            cb(err);
-            return;
-        }
-        fs.unlink(path, (err) => {
-            cb(err);
+        
+        processJspmBundleEntry({
+            entry: data.path,
+            jspmConfig: jspmConfig,
+            fileEvent: data.type,
+            projectRoot: projectRoot
         });
     });
-}
+});

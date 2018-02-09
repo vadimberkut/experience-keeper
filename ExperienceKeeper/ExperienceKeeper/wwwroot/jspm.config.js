@@ -13,31 +13,11 @@ System.config({
     "npm:*": "jspm_packages/npm/*"
   },
   bundles: {
-    "scripts/vendor.bundle.js": [
-      "scripts/vendor.js",
-      "npm:moment@2.20.1.js",
-      "npm:moment@2.20.1/moment.js",
-      "npm:lodash@4.17.5.js",
-      "npm:lodash@4.17.5/lodash.js"
-    ],
-    "scripts/home.bundle.js": [
-      "scripts/pages/home/index.js",
-      "scripts/vendor.js"
-    ],
     "jspm-bundles/scripts-pages-home-index.bundle.js": [
       "scripts\\pages\\home\\index.js"
     ],
     "jspm-bundles/scripts-pages-test-index.bundle.js": [
-      "scripts\\pages\\test\\index.js",
-      "scripts/vendor.js"
-    ],
-    "wwwroot/jspm-bundles/scripts-pages-home-index.bundle.js": [
-      "scripts\\pages\\home\\index.js",
-      "scripts/vendor.js",
-      "npm:moment@2.20.1.js",
-      "npm:moment@2.20.1/moment.js",
-      "npm:lodash@4.17.5.js",
-      "npm:lodash@4.17.5/lodash.js"
+      "scripts\\pages\\test\\index.js"
     ]
   },
 

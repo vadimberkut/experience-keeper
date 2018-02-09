@@ -18,9 +18,6 @@ System.js config:
 	- import script on page. E.g.:
 		SystemJS.import('/js/pages/home/index.babel.js');
 
-Import npm modules:
-	- add map to System.js config
-
 Polyfill (Babel) to emulate a full ES2015+ environment:
 	- npm install --save babel-polyfill
 	- inlude it as root dependency (require("babel-polyfill"))
