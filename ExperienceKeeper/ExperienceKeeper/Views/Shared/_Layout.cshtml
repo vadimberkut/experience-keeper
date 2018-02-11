@@ -83,10 +83,12 @@
 
         // loads relative to the current page URL
         //SystemJS.import('test2.js');
+
+        SystemJS.import('/scripts/polyfill.js');
         SystemJS.import('/scripts/pages/home/index.js');
 
-            // load from an absolute URL directly
-            //SystemJS.import('https://code.jquery.com/jquery.js');
+                    // load from an absolute URL directly
+                    //SystemJS.import('https://code.jquery.com/jquery.js');
     </script>
 </body>
 </html>

@@ -23,7 +23,9 @@ var config = {
     },
     'jspm-bundle': {
         entries: [
-            'wwwroot/scripts/pages/**/index.js'
+            'wwwroot/scripts/pages/**/index.js',
+            'wwwroot/scripts/vendor.js',
+            'wwwroot/scripts/polyfill.js',
         ],
         jspmConfig: jspmConfig,
         fileEvent: "changed", // use it to update bundles
@@ -100,18 +102,44 @@ var del = require('del');
 //        .pipe(connect.reload());
 //});
 
+
+/**
+ * Watches changes in page files and regenerates bundle only for that page
+ */
+gulp.task('watch-pages', () => {
+    var chokidarFsWatcher = gulp.watch(config['jspm-bundle'].entries, () => {
+        // will be called when the watcher emits a change, add or unlink event
+    });
+    chokidarFsWatcher.on('change', (data) => {
+        // TODO: Consider use Bundle API - https://github.com/jspm/jspm-cli/blob/master/docs/api.md#bundle-api
+        processJspmBundleEntry({
+            entry: data.path,
+            jspmConfig: jspmConfig,
+            fileEvent: data.type,
+            projectRoot: projectRoot
+        });
+    });
+});
+
 //wathing for changes to build
-gulp.task('watch', function(){
-    gulp.watch(config.sass.srcFolder, ['sass', 'minify-css']);
-    gulp.watch(config.babel.entries, ['babel']);
+gulp.task('watch', ['watch-pages'], function(){
+    gulp.watch(config.sass.srcFolder, ['build-styles']);
+    // gulp.watch(config.babel.entries, ['babel']);
 });
 
 //Build
-//gulp.task('build', [
-//    'sass',
-//    'fonts',
-//    'browserify'
-//]);
+gulp.task('build-styles', [
+   'sass',
+   'minify-css'
+]);
+gulp.task('build-scripts', [
+   'jspm-unbundle',
+   'jspm-bundle'
+]);
+gulp.task('build', [
+   'build-styles',
+   'build-scripts'
+]);
 
 //Clean deploy files
 //gulp.task('clean', function(){
@@ -141,31 +169,7 @@ gulp.task('watch', function(){
 
 
 gulp.task('default', [
-    'sass', 
-    'minify-css',
-    'babel',
-    //'fonts',
-    //'server', 
-    //'livereload',
-    //'watchify',
+    'build', 
     'watch'
 ]);
 
-
-gulp.task('v', () => {
-    var chokidarFsWatcher = gulp.watch([
-        'wwwroot/scripts/pages/**/index.js'
-    ], () => {
-        // will be called when the watcher emits a change, add or unlink event
-    });
-    chokidarFsWatcher.on('change', (data) => {
-        // TODO: COnsider use Bundle API - https://github.com/jspm/jspm-cli/blob/master/docs/api.md#bundle-api
-        
-        processJspmBundleEntry({
-            entry: data.path,
-            jspmConfig: jspmConfig,
-            fileEvent: data.type,
-            projectRoot: projectRoot
-        });
-    });
-});
