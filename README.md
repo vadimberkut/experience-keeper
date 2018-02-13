@@ -58,3 +58,13 @@ Development
 		Update database
 			dotnet ef database update -h
 			dotnet ef database update -c ApplicationDbContext -s . -p ../ExperienceKeeper.Data
+
+	ASP.NET Identity
+		- Create new MVC project with "Individual user accounts" option for authentication 
+		- or add it to existing project using new project as example
+			Data
+				- Microsoft.AspNetCore.Identity
+				- Microsoft.AspNetCore.Identity.EntityFrameworkCor
+				- Change DbContext
+				- Create migration and update DB
+				- Add AccountController, ManageControllers and Views, ViewModels, Services, Extensions

@@ -1,6 +1,6 @@
 using System;
 
-namespace ExperienceKeeper.Models
+namespace ExperienceKeeper.ViewModels
 {
     public class ErrorViewModel
     {

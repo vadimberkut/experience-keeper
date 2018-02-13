@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ExperienceKeeper.Data.DbContexts;
+using ExperienceKeeper.Data.Models.Identity;
+using ExperienceKeeper.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,7 +36,13 @@ namespace ExperienceKeeper
                     );
             });
 
+            // Add Indentity
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             // Services
+            services.AddTransient<IEmailSender, EmailSender>();
 
             // Includes support for Razor Pages and controllers
             services.AddMvc(
@@ -57,8 +66,13 @@ namespace ExperienceKeeper
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            // Static files
             app.UseStaticFiles();
 
+            // Use Auth
+            app.UseAuthentication();
+
+            // Mvc
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
