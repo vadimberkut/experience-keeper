@@ -5,13 +5,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ExperienceKeeper.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace ExperienceKeeper.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IConfiguration Configuration;
+
+        public HomeController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         public IActionResult Index()
         {
+            ViewBag.Test = Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
             return View();
         }
 

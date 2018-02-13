@@ -21,3 +21,40 @@ System.js config:
 Polyfill (Babel) to emulate a full ES2015+ environment:
 	- npm install --save babel-polyfill
 	- inlude it as root dependency (require("babel-polyfill"))
+
+
+
+
+Development
+	EFCore2 and PostgreSQL
+		For PG
+			- Create user with create DB rights (if DB will be created automatically)
+		For .
+			- Install Microsoft.EntityFrameworkCore
+			- Install Npgsql.EntityFrameworkCore.PostgreSQL
+
+			(For EF CLI support)
+			- Microsoft.EntityFrameworkCore.Tools
+			- Microsoft.EntityFrameworkCore.Tools.DotNet
+				If fails when installing through NuGet add "<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />" to .csproj file (with correct version)
+
+			- Add configurations (ConnectionString) to .json files
+			- Add configurations to Startup.cs
+		For .Data
+			- Install Microsoft.EntityFrameworkCore
+			- Install Npgsql.EntityFrameworkCore.PostgreSQL
+			- Create DbContext
+		- Create Initial migration
+		- Update database
+
+		Add migration (execute in base project directory)
+			dotnet ef migrations add -h
+			dotnet ef migrations add <MigrationName> -c ApplicationDbContext -o Migrations/ApplicationDb -s . -p ../ExperienceKeeper.Data
+		
+		Remove migration
+			dotnet ef migrations remove -h
+			dotnet ef migrations remove -c ApplicationDbContext -s . -p ../ExperienceKeeper.Data
+
+		Update database
+			dotnet ef database update -h
+			dotnet ef database update -c ApplicationDbContext -s . -p ../ExperienceKeeper.Data

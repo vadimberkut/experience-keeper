@@ -13,16 +13,24 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\jspm-bundles\" />
     <Folder Include="wwwroot\scripts\pages\test\" />
     <Folder Include="wwwroot\scripts\util\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExperienceKeeper.Data\ExperienceKeeper.Data.csproj" />
   </ItemGroup>
 
 </Project>
