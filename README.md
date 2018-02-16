@@ -23,6 +23,11 @@ Polyfill (Babel) to emulate a full ES2015+ environment:
 	- inlude it as root dependency (require("babel-polyfill"))
 
 
+Database
+	- Store all timestamps, dates in UTC
+	- Use Ulid (Universally Unique Lexicographically Sortable Identifier) as id
+		ExperienceKeeper.NUlid assembly is 100% copy of original NUlid for .NET
+		See - https://github.com/RobThree/NUlid
 
 
 Development
@@ -67,4 +72,10 @@ Development
 				- Microsoft.AspNetCore.Identity.EntityFrameworkCor
 				- Change DbContext
 				- Create migration and update DB
-				- Add AccountController, ManageControllers and Views, ViewModels, Services, Extensions
+				- Add AccountController, ManageControllers, Views, ViewModels, Services, Extensions
+
+
+
+
+
+dotnet ef migrations add Add_Category_UserCategory_Record_RecordUserCategory -c ApplicationDbContext -o Migrations/ApplicationDb -s . -p ../ExperienceKeeper.Data

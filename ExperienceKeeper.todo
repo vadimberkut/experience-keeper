@@ -1,10 +1,10 @@
 Milestone1:
   ✔ Create project structure - 1h @done (18-01-24 07:48)
 Milestone2:
-  ☐ Anonymous Home page
-  ☐ User regitration
+  ☐ Tags, labes, filters
 Milestone3:
   ☐ Images support - use cloud image service or write own
+  ☐ Search by records - ElasticSearch?
 
  ERRROS SOLUTIONS:
    - Gulp error in VS for autoprefixer, but in console all is ok

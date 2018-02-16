@@ -11,9 +11,10 @@ using System;
 namespace ExperienceKeeper.Data.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180216055808_Add_Category_UserCategory_Record_RecordUserCategory")]
+    partial class Add_Category_UserCategory_Record_RecordUserCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
