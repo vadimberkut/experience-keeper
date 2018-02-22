@@ -1,0 +1,15 @@
+﻿@{
+    int currentYear = DateTime.Now.Year;
+}
+
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>&copy; @currentYear - Experience Keeper</p>
+        </div>
+    </div>
+</footer>
+
+@section Styles {
+    <link rel="stylesheet" href="~/styles/footer.min.css" app-append-version="true" />
+}

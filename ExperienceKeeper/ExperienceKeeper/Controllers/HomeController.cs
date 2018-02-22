@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ExperienceKeeper.ViewModels;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
@@ -12,15 +13,19 @@ namespace ExperienceKeeper.Controllers
     public class HomeController : Controller
     {
         private readonly IConfiguration Configuration;
+        private readonly IHostingEnvironment HostingEnvironment;
 
-        public HomeController(IConfiguration configuration)
+        public HomeController(IConfiguration configuration, IHostingEnvironment hostingEnvironment)
         {
             Configuration = configuration;
+            HostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult Index()
         {
             ViewBag.Test = Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
+            ViewBag.WebRootPath = HostingEnvironment.WebRootPath;
+            ViewBag.ContentRootPath = HostingEnvironment.ContentRootPath;
             return View();
         }
 

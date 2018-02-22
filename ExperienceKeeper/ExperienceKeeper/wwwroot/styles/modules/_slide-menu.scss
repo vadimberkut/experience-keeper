@@ -1,0 +1,94 @@
+@import "../utils/_variables.scss";
+
+.slide-menu {
+    &.active {
+        .slide-menu__display-control {
+            display: none;
+        }
+        .slide-menu__bg-overlay {
+            display: block;
+        }
+        .slide-menu__content  {
+            left: 0;
+        }
+    }
+    .slide-menu__display-control {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        height: 100%;
+        width: 2%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: $color__grey--light;
+        box-shadow: 0px 0px 2px $color__grey--dark;
+
+        &:hover {
+            box-shadow: 0px 0px 4px $color__grey--dark;
+
+            .display-control__icon {
+                font-size: $text__font--hg;
+                color: $color__blue--dark;
+            }
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        .display-control__icon {
+            font-size: $text__font--lg;
+            color: $color__black;
+        }
+    }
+    .slide-menu__bg-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: $overlay__color;
+    }
+    .slide-menu__content {
+        $padding__left: 40px;
+        $padding__right: 20px;
+        position: fixed;
+        top: 0;
+        left: -20%;
+        z-index: 2;
+        height: 100%;
+        width: calc(20% - #{$padding__left} - #{$padding__left});
+        background-color: $color__grey--light;
+        transition: left linear 300ms;
+        padding: 20px $padding__right 20px $padding__left;
+        border-right: 2px solid $color__grey--dark;
+
+        .slide-menu__controls {
+            display: none;
+        }
+
+        .slide-menu__items-wrapper {
+        
+        }
+        .slide-menu__item {
+            padding: 20px 0;
+            margin: 0 0 20px 0;
+            border-bottom: 1px solid $border__color--gray;
+            
+            .item__name {
+                font-size: $text__font--nm;
+                line-height: $text__lheight--nm;
+            }
+            .item__desc {
+                font-size: $text__font--sm;
+                line-height: $text__lheight--sm;
+                padding-top: 10px;
+            }
+        }
+    }
+}

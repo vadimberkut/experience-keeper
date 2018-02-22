@@ -1,3 +1,41 @@
-﻿body {
-    background-color: aquamarine;
+﻿// Frameworks and libraries
+@import "../jspm_packages/npm/bulma@0.6.2/bulma.sass";
+
+// Custom styles
+@import "utils/_variables.scss";
+@import "modules/_slide-menu.scss";
+
+html {
+    font-size: $text__font--base; // define base font-size
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $color__blue-light;
+}
+
+.body-wrapper {
+    margin-left: 2%;
+    padding: 0;
+}
+
+.page-wrapper {
+
+}
+.page-header {
+
+}
+.page-content {
+    padding: 1%;
+}
+.page-footer {
+
+}
+
+.page-section {
+    // margin-top: 2%;
 }

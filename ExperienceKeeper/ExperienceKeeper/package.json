@@ -33,6 +33,7 @@
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
     "jspm": "^0.16.53",
+    "run-sequence": "^2.2.1",
     "through2": "^2.0.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
@@ -46,6 +47,7 @@
     "configFile": "wwwroot/jspm.config.js",
     "dependencies": {
       "babel-polyfill": "npm:babel-polyfill@^6.26.0",
+      "bulma": "npm:bulma@^0.6.2",
       "lodash": "npm:lodash@^4.17.5",
       "moment": "npm:moment@^2.20.1"
     },

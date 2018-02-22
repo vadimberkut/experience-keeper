@@ -4,6 +4,8 @@ const exec = require('child_process').exec;
 const jspmConfig = require('./package.json').jspm;
 const processJspmBundleEntry = require('./Gulp/utils/jspmBundle.js').processJspmBundleEntry;
 
+const runSequence = require('run-sequence'); // runs gulp tasks sequentially or in parallel
+
 const dirname = __dirname;
 const projectRoot = __dirname;
 
@@ -59,7 +61,8 @@ var config = {
     'minify-css': {
         entries: [
             'wwwroot/styles/**/*.+(css)',
-            '!wwwroot/styles/**/*.min.+(css)' // skip minified files
+            '!wwwroot/styles/**/*.min.+(css)', // skip minified files
+            '!wwwroot/styles/**/*.+(scss|sass)', // skip sass files
         ],
         destFolder: 'wwwroot/styles'
     },
@@ -104,7 +107,8 @@ var del = require('del');
 
 
 /**
- * Watches changes in page files and regenerates bundle only for that page
+ * Watches changes in page files and regenerates bundle only for that page.
+ * !!! - it is not appropriate for heavy developmnet
  */
 gulp.task('watch-pages', () => {
     var chokidarFsWatcher = gulp.watch(config['jspm-bundle'].entries, () => {
@@ -122,20 +126,25 @@ gulp.task('watch-pages', () => {
 });
 
 //wathing for changes to build
-gulp.task('watch', ['watch-pages'], function(){
-    gulp.watch(config.sass.srcFolder, ['build-styles']);
-    // gulp.watch(config.babel.entries, ['babel']);
+gulp.task('watch', function(){
+    gulp.watch(config.sass.srcFolder, ['sass']);
 });
 
 //Build
-gulp.task('build-styles', [
-   'sass',
-   'minify-css'
-]);
-gulp.task('build-scripts', [
-   'jspm-unbundle',
-   'jspm-bundle'
-]);
+gulp.task('build-styles', (callback) => {
+    runSequence(
+        'sass',
+        'minify-css',
+        callback
+    );
+});
+gulp.task('build-scripts', (callback) => {
+    runSequence(
+        'jspm-unbundle',
+        'jspm-bundle',
+        callback
+    );
+});
 gulp.task('build', [
    'build-styles',
    'build-scripts'

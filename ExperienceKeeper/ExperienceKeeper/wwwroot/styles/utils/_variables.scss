@@ -1,0 +1,36 @@
+// Notes
+// Sass !default is like adding an “unless this is already assigned” qualifier to your variable assignments.
+// Colors
+// Light colors set - http://colorhunt.co/c/106550
+$color__red: #EE2b47 !default;
+$color__black: #2c2E3E !default;
+$color__blue--dark: #2c3E50 !default;
+$color__blue: #34495E !default;
+$color__blue-light: #537791 !default;
+$color__grey--dark: #c1c0b9 !default;
+$color__grey: #e7e6e1 !default;
+$color__grey--light: #f3f3f3 !default;
+
+$overlay__color: rgba(0, 0, 0, 0.5);
+
+$border__color--red: $color__red;
+$border__color--gray: $color__grey;
+
+// Text
+$text__family--base: sans-serif !default;
+
+$text__font--base: 16px;
+$text__font--xs: 0.6rem;
+$text__font--sm: 0.8rem;
+$text__font--nm: 1rem;
+$text__font--bg: 1.5rem;
+$text__font--lg: 2rem;
+$text__font--hg: 2.5rem;
+
+$lheight-offset: 0.1rem;
+$text__lheight--xs: $text__font--xs + $lheight-offset;
+$text__lheight--sm: $text__font--sm + $lheight-offset;
+$text__lheight--nm: $text__font--nm + $lheight-offset;
+$text__lheight--bg: $text__font--bg + $lheight-offset;
+$text__lheight--lg: $text__font--lg + $lheight-offset;
+$text__lheight--hg: $text__font--hg + $lheight-offset;
