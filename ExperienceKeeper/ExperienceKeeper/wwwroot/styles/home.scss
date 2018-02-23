@@ -23,14 +23,14 @@
 
         .pros__item {
             $margin: 2%;
-            $items-per-row: 3;
+            $items-per-row: 5;
             width: calc((100% - ((#{$items-per-row} - 1) * #{$margin})) / #{$items-per-row});
             margin-right: $margin;
             margin-bottom: $margin;
             border: 1px solid $border__color--gray;
             border-bottom: 4px solid $border__color--gray;
 
-            &:nth-child(3n) {
+            &:nth-child(5n) {
                 margin-right: 0;
             }
 

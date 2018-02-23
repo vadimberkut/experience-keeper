@@ -1,0 +1,56 @@
+@import "utils/_variables.scss";
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+.subtitle {
+    text-align: center;
+}
+
+.register-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .page-content {
+        min-width: 300px;
+        width: 300px;
+
+        .register-form {
+            .register-button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.login-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .page-content {
+        min-width: 300px;
+        width: 300px;
+
+        .login-form {
+            .login-button {
+                width: 100%;
+            }
+            .login-links {
+            
+            }
+        }
+
+        .external-login {
+            margin-top: 3rem;
+        }
+
+       
+    }
+}

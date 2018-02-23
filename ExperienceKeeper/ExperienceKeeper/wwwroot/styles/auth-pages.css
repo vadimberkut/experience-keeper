@@ -1,0 +1,58 @@
+.title {
+  width: 100%;
+  text-align: center; }
+
+.subtitle {
+  text-align: center; }
+
+.register-page-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%; }
+  .register-page-wrapper .page-content {
+    min-width: 300px;
+    width: 300px; }
+    .register-page-wrapper .page-content .register-form .register-button {
+      width: 100%; }
+
+.login-page-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%; }
+  .login-page-wrapper .page-content {
+    min-width: 300px;
+    width: 300px; }
+    .login-page-wrapper .page-content .login-form .login-button {
+      width: 100%; }
+    .login-page-wrapper .page-content .external-login {
+      margin-top: 3rem; }

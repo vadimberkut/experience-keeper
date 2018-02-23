@@ -16,21 +16,28 @@ $overlay__color: rgba(0, 0, 0, 0.5);
 $border__color--red: $color__red;
 $border__color--gray: $color__grey;
 
+
 // Text
-$text__family--base: sans-serif !default;
+$font-family--base: sans-serif !default;
 
-$text__font--base: 16px;
-$text__font--xs: 0.6rem;
-$text__font--sm: 0.8rem;
-$text__font--nm: 1rem;
-$text__font--bg: 1.5rem;
-$text__font--lg: 2rem;
-$text__font--hg: 2.5rem;
+$font-size--base: 16px;
+$font-size--xs: 0.6rem;
+$font-size--sm: 0.8rem;
+$font-size--nm: 1rem;
+$font-size--bg: 1.5rem;
+$font-size--lg: 2rem;
+$font-size--hg: 2.5rem;
 
+$lheight-offset--base: 2px;
 $lheight-offset: 0.1rem;
-$text__lheight--xs: $text__font--xs + $lheight-offset;
-$text__lheight--sm: $text__font--sm + $lheight-offset;
-$text__lheight--nm: $text__font--nm + $lheight-offset;
-$text__lheight--bg: $text__font--bg + $lheight-offset;
-$text__lheight--lg: $text__font--lg + $lheight-offset;
-$text__lheight--hg: $text__font--hg + $lheight-offset;
+$line-height--base: $font-size--base + $lheight-offset--base;
+$line-height--xs: $font-size--xs + $lheight-offset;
+$line-height--sm: $font-size--sm + $lheight-offset;
+$line-height--nm: $font-size--nm + $lheight-offset;
+$line-height--bg: $font-size--bg + $lheight-offset;
+$line-height--lg: $font-size--lg + $lheight-offset;
+$line-height--hg: $font-size--hg + $lheight-offset;
+
+// Errors
+$error__color: $color__red;
+$error__font: $color__red;

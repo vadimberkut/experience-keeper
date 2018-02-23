@@ -1,0 +1,41 @@
+﻿@{ 
+    Layout = null;
+}
+
+<nav class="slide-menu">
+    <div class="slide-menu__display-control">
+        <span class="display-control__icon">
+            <i class="fas fa-angle-right"></i>
+        </span>
+    </div>
+    <div class="slide-menu__bg-overlay"></div>
+    <div class="slide-menu__content">
+        <!-- Controls -->
+        <div class="slide-menu__controls">
+            <div class="control"><i class="fas fa-times"></i></div>
+        </div>
+        <!-- Menu entries -->
+        <div class="slide-menu__items-wrapper">
+            <div class="slide-menu__item">
+                <div class="item__name"><a href="@Url.Action("Login", "Account")">Sign In</a></div>
+                <div class="item__desc">Sign In into account</div>
+            </div>
+            <div class="slide-menu__item">
+                <div class="item__name"><a href="@Url.Action("Register", "Account")">Sign Up</a></div>
+                <div class="item__desc">Create new account</div>
+            </div>
+            <div class="slide-menu__item">
+                <div class="item__name"><a href="@Url.Action("Index", "Home")">Home</a></div>
+                <div class="item__desc"></div>
+            </div>
+            <div class="slide-menu__item">
+                <div class="item__name"><a href="@Url.Action("Contact", "Home")">Contact</a></div>
+                <div class="item__desc"></div>
+            </div>
+            <div class="slide-menu__item">
+                <div class="item__name"><a href="@Url.Action("About", "Home")">About</a></div>
+                <div class="item__desc">Read more about us</div>
+            </div>
+        </div>
+    </div>
+</nav>

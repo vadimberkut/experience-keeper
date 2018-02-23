@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "./",
+  baseURL: "../", // There was "./" but when it "../" babel loads without error
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {

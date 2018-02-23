@@ -30,7 +30,7 @@
             box-shadow: 0px 0px 4px $color__grey--dark;
 
             .display-control__icon {
-                font-size: $text__font--hg;
+                font-size: $font-size--hg;
                 color: $color__blue--dark;
             }
         }
@@ -40,7 +40,7 @@
         }
 
         .display-control__icon {
-            font-size: $text__font--lg;
+            font-size: $font-size--lg;
             color: $color__black;
         }
     }
@@ -49,7 +49,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 1;
+        z-index: 10;
         width: 100%;
         height: 100%;
         background-color: $overlay__color;
@@ -60,7 +60,7 @@
         position: fixed;
         top: 0;
         left: -20%;
-        z-index: 2;
+        z-index: 11;
         height: 100%;
         width: calc(20% - #{$padding__left} - #{$padding__left});
         background-color: $color__grey--light;
@@ -77,16 +77,16 @@
         }
         .slide-menu__item {
             padding: 20px 0;
-            margin: 0 0 20px 0;
+            // margin: 0 0 20px 0;
             border-bottom: 1px solid $border__color--gray;
             
             .item__name {
-                font-size: $text__font--nm;
-                line-height: $text__lheight--nm;
+                font-size: $font-size--nm;
+                line-height: $line-height--nm;
             }
             .item__desc {
-                font-size: $text__font--sm;
-                line-height: $text__lheight--sm;
+                font-size: $font-size--sm;
+                line-height: $line-height--sm;
                 padding-top: 10px;
             }
         }

@@ -22,13 +22,13 @@
       -ms-flex-align: center;
           align-items: center; }
   .home-page-wrapper .pros .pros__item {
-    width: -webkit-calc((100% - ((3 - 1) * 2%)) / 3);
-    width: calc((100% - ((3 - 1) * 2%)) / 3);
+    width: -webkit-calc((100% - ((5 - 1) * 2%)) / 5);
+    width: calc((100% - ((5 - 1) * 2%)) / 5);
     margin-right: 2%;
     margin-bottom: 2%;
     border: 1px solid #e7e6e1;
     border-bottom: 4px solid #e7e6e1; }
-    .home-page-wrapper .pros .pros__item:nth-child(3n) {
+    .home-page-wrapper .pros .pros__item:nth-child(5n) {
       margin-right: 0; }
     .home-page-wrapper .pros .pros__item:hover {
       border-bottom-color: #EE2b47; }
