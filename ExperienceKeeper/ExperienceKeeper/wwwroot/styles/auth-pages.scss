@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-.register-page-wrapper {
+.auth-page-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,11 @@
     .page-content {
         min-width: 300px;
         width: 300px;
+    }
+}
 
+.register-page-wrapper {
+    .page-content {
         .register-form {
             .register-button {
                 width: 100%;
@@ -28,16 +32,7 @@
 }
 
 .login-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-
     .page-content {
-        min-width: 300px;
-        width: 300px;
-
         .login-form {
             .login-button {
                 width: 100%;
@@ -52,5 +47,51 @@
         }
 
        
+    }
+}
+
+.forgot-password-page-wrapper {
+    .restore-button {
+        width: 100%;
+    }
+}
+
+.reset-password-page-wrapper {
+
+}
+
+// Manage pages
+.manage-pages-layout-wrapper {
+    margin: 1rem auto;
+
+    .layout-header {
+        margin-bottom: 1rem;
+    }
+    .layout-body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        border-top: 1px solid $border__color--gray;
+    }
+
+    .manage-menu {
+        margin-right: 2rem;
+        padding-right: 2rem;
+        padding-top: 2rem;
+        padding-left: 1rem;
+        border-right: 1px solid $border__color--gray;
+    }
+    .layout-content {
+        flex: 1;
+        padding-top: 2rem;
+
+        .subtitle {
+            text-align: left;
+        }
+
+        .send-verification-email-button {
+            margin-top: 0.7rem;
+        }
     }
 }

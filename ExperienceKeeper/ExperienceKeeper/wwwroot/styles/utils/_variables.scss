@@ -6,7 +6,8 @@ $color__red: #EE2b47 !default;
 $color__black: #2c2E3E !default;
 $color__blue--dark: #2c3E50 !default;
 $color__blue: #34495E !default;
-$color__blue-light: #537791 !default;
+$color__blue--light: #537791 !default;
+$color__blue--super-light: #5295c5 !default;
 $color__grey--dark: #c1c0b9 !default;
 $color__grey: #e7e6e1 !default;
 $color__grey--light: #f3f3f3 !default;
@@ -16,6 +17,8 @@ $overlay__color: rgba(0, 0, 0, 0.5);
 $border__color--red: $color__red;
 $border__color--gray: $color__grey;
 
+$link__color--base: $color__blue--light;
+$link__color--hover: $color__blue--super-light;
 
 // Text
 $font-family--base: sans-serif !default;

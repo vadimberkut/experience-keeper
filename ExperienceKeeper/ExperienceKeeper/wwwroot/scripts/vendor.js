@@ -5,11 +5,12 @@
 
 import _ from 'lodash';
 import * as moment from 'moment';
+import Vue from 'vue';
 
 export default {
     _,
     moment,
-    test: "T"
+    Vue: Vue
 }
 
 //const lodash = require('lodash');

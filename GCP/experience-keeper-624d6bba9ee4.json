@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "experience-keeper",
+  "private_key_id": "624d6bba9ee47bc68960f7f71176c7c201da0a41",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7a5vqS9VQMGJO\n9qzf1hfI7npKtWpAJ2Awscjqulw3T8eexepF6clUPIGMKukBTP22+w0pynzOCarf\n6iqxTu7fRb5k3n/FXF3vrokh3AQ55wfhOUSOVouOaWWvytw8JBjMYtW+7SEc+j+P\nqe+NozU0qZ6mB0b05MK3z8GGYpBZBEaeRpwTc8uPzXXvoLf7wvc4Aa0wGVauPwst\nBcrnaolI759M2H5oZQy0GDlMxlOdqePXdJR4RWnj9G1s9JEuExzi9BNEns5ywatq\nh3onSbGILvWPwchbW4Sdqygzm2b93YGoFXU+sFegwQ93WXMMrIXj7k1HMTzBSMyG\ngx5J1sFJAgMBAAECggEAAPaDU6rj/SOtFs6RJhT46ipMzVirTQordSjTgc94KjTD\nicjuRWc+4P3u4v32kOTsn44goIZMD2tbJjx1C9gU7wWm0NmYGbrFP1CNxPciUpnl\naM52iIxGMqsplF3znrJ8BE9JKPIKsIb4GUBhE4wHyNHK0DB6aWz3DghkRpxDHs5t\nK3bPd27mXXzyiJFUr88eDhuELeijN1T4y4dBmM40nENgV0q6X3ub81uaAnaoupHU\nqYLlsEn/KP6uLkh+MLqi27FzWOTlkqjhzENu4NY7pqt0WRe6BdJEIJcmDU+UB2sa\npum9cOpOJf8A/0fYicDqP5/FBrSvo4FteGvlL5K7QQKBgQDcXB6pj8e2nCD4DmAb\nHA6ErXUGPB0tay9nMASx/9QMhTqB3y8Je1PJqRFEMhmX4Gq9Cy71VKQ996HatsGf\njt6w0lbgFE49e5zaIhsCiodjTILRFNUMcAgKYqGA3TaoOMn5K3QHVAlJa7RVJTkG\nSUc7NBe1Ka2ijbGdVs9J6JsxIQKBgQDZu6Wz1IIYhn5J5sRWjc+ssux/OtRos3Mv\nSTo/CgR6X5AHPcd/EvufTqybog3eZIGqwi/NQzJSbIzNQhdwBDUJruheirPUWiMB\nRVdUONf7jIch+TJNBFGJnLxPenPIIWeDJuFE5nlNGmzI3NykHuBryPJxP4gPAP47\nHm4ay9iDKQKBgE75tQOQRENuMWK1xDvzEkD66bYSVWKxx4tz6jrhNV5HYXCqTHFZ\nge4EaevHCOUlyRt3ppzGeRa8aYW5eit1SNqWiAxHOsNOSijjkEqY22z7PucwUCrk\n+/y83KUSo0QnFjv3Ft6Jf8qQj1D0xjs6iAzv3o9PIKvhnIaHVkNm2jgBAoGBAKlG\nKKopccctcKt1vHjqIWXLaO/1RcPsl4VQsfbmi9qzxt7KWfniQTt2R91rXMrkaqbd\n95nmPw4zlDfTxTLyImXX1JID1ZEnToWjaiRxWQEZHMn92exkihupfgFwWulhhv9A\nz+voHrAh9icnBmaWFrXVcR84XEgF5qEBpGoyxq4ZAoGAdBrKGvuOmaqiGbFwoFJ2\nzqycIMIhLCc4w9dVxGpH0DbY8DmfSF83fiTmZreABTS/R0bYMTNYMANg+ftmkmMh\nicRy4qdACRliY+dlf8UMvILH1bWYYTWEEPQQdiaH+6IyKrRG2E4F8yvfOkca8ZU/\nOsf6D/weM0cT2rBz6TKWm+4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "experiencekeeperserviceaccount@experience-keeper.iam.gserviceaccount.com",
+  "client_id": "114968515187822999829",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/experiencekeeperserviceaccount%40experience-keeper.iam.gserviceaccount.com"
+}

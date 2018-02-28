@@ -74,8 +74,26 @@ Development
 				- Create migration and update DB
 				- Add AccountController, ManageControllers, Views, ViewModels, Services, Extensions
 
-
+Configure GCP (Google Cloud Platform) Cloud Storage Features
+ - set env variable pointing to .json file with private key
+	Windows cmd:
+ 		set GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
+	Linux:
+		export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
+ - 
 
 
 
 dotnet ef migrations add Add_Category_UserCategory_Record_RecordUserCategory -c ApplicationDbContext -o Migrations/ApplicationDb -s . -p ../ExperienceKeeper.Data
+
+
+ ERRRORS SOLUTIONS:
+   - Gulp error in VS for autoprefixer, but in console all is ok
+     https://stackoverflow.com/questions/43849585/update-node-version-in-visual-studio-2017
+     Need to move PATH higher in Tools > Options > Projects and Solutions > Web Package Management > External Web Tools, so use manually installed nodejs instead of VS default
+
+
+- 1
+- 2
+- 3
+- asdsad

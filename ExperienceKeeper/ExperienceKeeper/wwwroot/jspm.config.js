@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "../", // There was "./" but when it "../" babel loads without error
+  baseURL: "../",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
@@ -21,11 +21,12 @@ System.config({
     "core-js": "npm:core-js@1.2.7",
     "lodash": "npm:lodash@4.17.5",
     "moment": "npm:moment@2.20.1",
+    "vue": "npm:vue@2.5.13",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
     "github:jspm/nodelibs-buffer@0.1.1": {
-      "buffer": "npm:buffer@5.0.8"
+      "buffer": "npm:buffer@5.1.0"
     },
     "github:jspm/nodelibs-path@0.1.0": {
       "path-browserify": "npm:path-browserify@0.0.0"
@@ -60,8 +61,8 @@ System.config({
       "core-js": "npm:core-js@2.5.3",
       "regenerator-runtime": "npm:regenerator-runtime@0.11.1"
     },
-    "npm:buffer@5.0.8": {
-      "base64-js": "npm:base64-js@1.2.1",
+    "npm:buffer@5.1.0": {
+      "base64-js": "npm:base64-js@1.2.3",
       "ieee754": "npm:ieee754@1.1.8"
     },
     "npm:core-js@1.2.7": {
@@ -99,6 +100,9 @@ System.config({
     },
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
+    },
+    "npm:vue@2.5.13": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
 });

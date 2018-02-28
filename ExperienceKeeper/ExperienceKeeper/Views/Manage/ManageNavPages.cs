@@ -29,8 +29,8 @@ namespace WebApplication1.Views.Manage
     
         public static string PageNavClass(ViewContext viewContext, string page)
         {
-            var activePage = viewContext.ViewData["ActivePage"] as string;
-            return string.Equals(activePage, page, StringComparison.OrdinalIgnoreCase) ? "active" : null;
+            var activePage = viewContext.ViewData[ActivePageKey] as string;
+            return string.Equals(activePage, page, StringComparison.OrdinalIgnoreCase) ? "is-active" : null;
         }
 
         public static void AddActivePage(this ViewDataDictionary viewData, string activePage) => viewData[ActivePageKey] = activePage;

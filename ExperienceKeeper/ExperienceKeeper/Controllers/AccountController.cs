@@ -65,6 +65,10 @@ namespace ExperienceKeeper.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
+                    // Redirect to main page
+                    returnUrl = Url.Action("Index", "Main");
+
                     return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

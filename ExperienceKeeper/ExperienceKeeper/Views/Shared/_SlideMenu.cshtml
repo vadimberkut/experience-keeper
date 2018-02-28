@@ -1,6 +1,9 @@
-﻿@{ 
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
     Layout = null;
 }
+
 
 <nav class="slide-menu">
     <div class="slide-menu__display-control">
@@ -16,26 +19,59 @@
         </div>
         <!-- Menu entries -->
         <div class="slide-menu__items-wrapper">
+            @if (!SignInManager.IsSignedIn(User))
+            {
+                <!-- Login, Register buttons -->
+                <div class="slide-menu__item">
+                    <div class="item__name"><a asp-action="Login" asp-controller="Account">Sign In</a></div>
+                    <div class="item__desc">Sign In into account</div>
+                </div>
+                <div class="slide-menu__item">
+                    <div class="item__name"><a asp-action="Register" asp-controller="Account">Sign Up</a></div>
+                    <div class="item__desc">Create new account</div>
+                </div>
+                <div class="slide-menu__item">
+                    <div class="item__name"><a asp-action="Index" asp-controller="Home">Home</a></div>
+                    <div class="item__desc"></div>
+                </div>
+            }
+            else
+            {
+                <!-- User profile item -->
+                <div class="slide-menu__item item__user">
+                    <figure class="user-image">
+                        <img src="#" alt="" />
+                    </figure>
+                    <div class="user-info">
+                        <a asp-action="Index" asp-controller="Manage" class="info__item">@UserManager.GetUserName(User)</a>
+                    </div>
+                </div>
+
+                <div class="slide-menu__item">
+                    <div class="item__name"><a asp-action="Index" asp-controller="Main">Home</a></div>
+                    <div class="item__desc"></div>
+                </div>
+            }
+
+            
             <div class="slide-menu__item">
-                <div class="item__name"><a href="@Url.Action("Login", "Account")">Sign In</a></div>
-                <div class="item__desc">Sign In into account</div>
-            </div>
-            <div class="slide-menu__item">
-                <div class="item__name"><a href="@Url.Action("Register", "Account")">Sign Up</a></div>
-                <div class="item__desc">Create new account</div>
-            </div>
-            <div class="slide-menu__item">
-                <div class="item__name"><a href="@Url.Action("Index", "Home")">Home</a></div>
+                <div class="item__name"><a asp-action="Contact" asp-controller="Home">Contact</a></div>
                 <div class="item__desc"></div>
             </div>
             <div class="slide-menu__item">
-                <div class="item__name"><a href="@Url.Action("Contact", "Home")">Contact</a></div>
-                <div class="item__desc"></div>
-            </div>
-            <div class="slide-menu__item">
-                <div class="item__name"><a href="@Url.Action("About", "Home")">About</a></div>
+                <div class="item__name"><a asp-action="About" asp-controller="Home">About</a></div>
                 <div class="item__desc">Read more about us</div>
             </div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <!-- Logout -->
+                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="">
+                    <div class="slide-menu__item">
+                        <div class="item__name"><button type="submit" class="button link">Log out</button></div>
+                        <div class="item__desc"></div>
+                    </div>
+                </form>
+            }
         </div>
     </div>
 </nav>

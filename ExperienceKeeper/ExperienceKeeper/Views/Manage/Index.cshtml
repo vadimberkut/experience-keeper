@@ -4,39 +4,65 @@
     ViewData.AddActivePage(ManageNavPages.Index);
 }
 
-<h4>@ViewData["Title"]</h4>
-@Html.Partial("_StatusMessage", Model.StatusMessage)
-<div class="row">
-    <div class="col-md-6">
-        <form method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Username"></label>
-                <input asp-for="Username" class="form-control" disabled />
-            </div>
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                @if (Model.IsEmailConfirmed)
-                {
-                    <div class="input-group">
-                        <input asp-for="Email" class="form-control" />
-                        <span class="input-group-addon" aria-hidden="true"><span class="glyphicon glyphicon-ok text-success"></span></span>
+<div class="manage-page-wrapper profile-page-wrapper">
+    <div class="page-header">
+        <h2 class="subtitle is-3">@ViewData["Title"]</h2>
+        @Html.Partial("_StatusMessage", " asgd avsdvahgsd vhvas gdhgas d")
+        @*@Html.Partial("_StatusMessage", Model.StatusMessage)*@
+    </div>
+    <div class="page-content">
+        <section class="section">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="field">
+                    <label asp-for="Username" class="label"></label>
+                    <div class="control has-icons-left">
+                        <input asp-for="Username" class="input" placeholder="" disabled />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
                     </div>
-                }
-                else
-                {
-                    <input asp-for="Email" class="form-control" />
-                    <button asp-action="SendVerificationEmail" class="btn btn-link">Send verification email</button>
-                }
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-default">Save</button>
-        </form>
+                </div>
+                <div class="field">
+                    <label asp-for="Email" class="label"></label>
+                    @if (Model.IsEmailConfirmed)
+                    {
+                        <div class="control has-icons-left">
+                            <input asp-for="Email" class="input is-success" placeholder="" />
+                            <span class="icon is-small is-left has-text-success">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                        <p class="help is-success">Email is confirmed</p>
+                    }
+                    else
+                    {
+                        <div class="control has-icons-left">
+                            <input asp-for="Email" class="input is-warning" placeholder="Enter your Email" />
+                            <span class="icon is-small is-left has-text-warning">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                        <p class="help is-warning">Email isn't confirmed</p>
+                        <button asp-action="SendVerificationEmail" class="button send-verification-email-button">Send verification email</button>
+                    }
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="field">
+                    <label asp-for="PhoneNumber" class="label"></label>
+                    <div class="control has-icons-left">
+                        <input asp-for="PhoneNumber" class="input" placeholder="Enter your phone number" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                    </div>
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="field">
+                    <button type="submit" class="button">Save</button>
+                </div>
+            </form>
+        </section>
     </div>
 </div>
 

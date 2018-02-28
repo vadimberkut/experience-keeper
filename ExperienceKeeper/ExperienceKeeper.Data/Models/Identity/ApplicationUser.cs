@@ -19,6 +19,9 @@ namespace ExperienceKeeper.Data.Models.Identity
         public bool IsDeleted { get; set; }
         public DateTime? DeletedOnUtc { get; set; }
 
+        //public string DisplayName { get; set; }
+   
+
         public IEnumerable<UserCategory> UserCategories { get; set; }
         public IEnumerable<Record> ExperienceRecords { get; set; }
     }

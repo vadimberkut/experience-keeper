@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-page-wrapper">
+    <div id="vueApp">
+        {{ message }}
+    </div>
+</div>
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/styles/main.css" app-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/styles/main.min.css" app-append-version="true" />
+    </environment>
+}
+
+@section Scripts {
+    <script>
+        SystemJS.import('/scripts/pages/main/index.js');
+    </script>
+}
