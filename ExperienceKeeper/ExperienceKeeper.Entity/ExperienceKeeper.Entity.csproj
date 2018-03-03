@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.1.0-preview1-final" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExperienceKeeper.NUlid\ExperienceKeeper.NUlid.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Input\" />
+    <Folder Include="Models\View\Main\" />
+  </ItemGroup>
+
+</Project>

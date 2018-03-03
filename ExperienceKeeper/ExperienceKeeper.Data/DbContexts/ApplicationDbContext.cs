@@ -1,5 +1,5 @@
-﻿using ExperienceKeeper.Data.Models;
-using ExperienceKeeper.Data.Models.Identity;
+﻿using ExperienceKeeper.Entity.Entities;
+using ExperienceKeeper.Entity.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;

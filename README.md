@@ -45,6 +45,10 @@ Development
 
 			- Add configurations (ConnectionString) to .json files
 			- Add configurations to Startup.cs
+		For .Entities
+			- Install Microsoft.AspNetCore.Identity
+			- Install Microsoft.AspNetCore.Identity.EntityFrameworkCore
+			- Install Microsoft.AspNetCore.Mvc.Core
 		For .Data
 			- Install Microsoft.EntityFrameworkCore
 			- Install Npgsql.EntityFrameworkCore.PostgreSQL

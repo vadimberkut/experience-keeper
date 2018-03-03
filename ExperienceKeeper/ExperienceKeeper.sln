@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExperienceKeeper", "ExperienceKeeper\ExperienceKeeper.csproj", "{7D6993AC-1B75-4F56-9197-91B02568C7C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExperienceKeeper.Web", "ExperienceKeeper.Web\ExperienceKeeper.Web.csproj", "{7D6993AC-1B75-4F56-9197-91B02568C7C5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExperienceKeeper.Data", "ExperienceKeeper.Data\ExperienceKeeper.Data.csproj", "{2203A592-150E-4F71-8BBC-D91A818F9FDE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{5C75596F-B350-4761-876E-5C4F1844B8DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperienceKeeper.NUlid", "ExperienceKeeper.NUlid\ExperienceKeeper.NUlid.csproj", "{B6F61927-6A7E-4EF6-B3DF-E090C3F4A07F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExperienceKeeper.NUlid", "ExperienceKeeper.NUlid\ExperienceKeeper.NUlid.csproj", "{B6F61927-6A7E-4EF6-B3DF-E090C3F4A07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperienceKeeper.Entity", "ExperienceKeeper.Entity\ExperienceKeeper.Entity.csproj", "{D9163F7D-F11E-4FBC-B302-F2FE697E6105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B6F61927-6A7E-4EF6-B3DF-E090C3F4A07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6F61927-6A7E-4EF6-B3DF-E090C3F4A07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6F61927-6A7E-4EF6-B3DF-E090C3F4A07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9163F7D-F11E-4FBC-B302-F2FE697E6105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9163F7D-F11E-4FBC-B302-F2FE697E6105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9163F7D-F11E-4FBC-B302-F2FE697E6105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9163F7D-F11E-4FBC-B302-F2FE697E6105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

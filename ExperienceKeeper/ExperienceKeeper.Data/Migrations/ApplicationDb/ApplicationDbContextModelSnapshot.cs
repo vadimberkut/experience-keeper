@@ -20,7 +20,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.Category", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.Category", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.Identity.ApplicationRole", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.Identity.ApplicationRole", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -70,7 +70,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.Identity.ApplicationUser", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.Identity.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -135,7 +135,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.Record", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.Record", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -169,7 +169,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
                     b.ToTable("ExperienceRecords");
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.RecordUserCategory", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.RecordUserCategory", b =>
                 {
                     b.Property<string>("RecordId");
 
@@ -182,7 +182,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
                     b.ToTable("ExperienceRecordUserCategories");
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.UserCategory", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.UserCategory", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -301,35 +301,35 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.Record", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.Record", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationUser", "User")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationUser", "User")
                         .WithMany("ExperienceRecords")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.RecordUserCategory", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.RecordUserCategory", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Record", "Record")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Record", "Record")
                         .WithMany("RecordUserCategories")
                         .HasForeignKey("RecordId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ExperienceKeeper.Data.Models.UserCategory", "UserCategory")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.UserCategory", "UserCategory")
                         .WithMany("RecordUserCategories")
                         .HasForeignKey("UserCategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ExperienceKeeper.Data.Models.UserCategory", b =>
+            modelBuilder.Entity("ExperienceKeeper.Entity.Entities.UserCategory", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Category", "Category")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Category", "Category")
                         .WithMany("UserCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationUser", "User")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationUser", "User")
                         .WithMany("UserCategories")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -337,7 +337,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationRole")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -345,7 +345,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationUser")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -353,7 +353,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationUser")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -361,12 +361,12 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationRole")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationUser")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -374,7 +374,7 @@ namespace ExperienceKeeper.Data.Migrations.ApplicationDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ExperienceKeeper.Data.Models.Identity.ApplicationUser")
+                    b.HasOne("ExperienceKeeper.Entity.Entities.Identity.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
